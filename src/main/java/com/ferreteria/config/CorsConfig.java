@@ -10,6 +10,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 @Configuration
 public class CorsConfig 
 {
+@SuppressWarnings("deprecation")
 @Bean
 public WebMvcConfigurer corsConfigurer() {
     

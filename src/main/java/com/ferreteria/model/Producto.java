@@ -23,14 +23,14 @@ public class Producto
 	@Column(name = "id_Producto")
 	private int idProducto;
 	
-	@NotNull(message = "Name may not be null")
+	//@NotNull(message = "Name may not be null")
 	@Size(min = 2, max = 15)
 	@Column(name = "nombre_Producto")
 	private String nombreProducto;
 	
-	@NotNull(message = "Name may not be null")
+	//@NotNull(message = "Name may not be null")
 	@Size(min = 2, max = 20)
-	@Column(name = "codigoBarras_Producto")
+	@Column(name = "codigo_Barras_Producto")
 	private String codigoBarrasProducto;
 	
 	@NotNull(message = "Name may not be null")
@@ -58,8 +58,6 @@ public class Producto
 	@JoinColumn(name = "id_ProveedorFK")
 	private Proveedor proveedor;
 
-	
-	
 	
 	public Producto() {
 		
