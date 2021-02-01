@@ -21,31 +21,28 @@ import com.ferreteria.service.IServiceProducto;
 @RequestMapping("productos")
 public class ControllerProductoImpl implements IControllerProducto
 {
+//	@Autowired
+//	private HttpSession session;
+	
 	@Autowired
 	private IServiceProducto iServiceProducto;
 	
-	@RequestMapping("alla")
-	public List<Producto>gertAll()
+	@RequestMapping(value = "/all",method = RequestMethod.GET)
+	public List<Producto>getOneProducto()
 	{
-		System.err.println("entro");
+		//System.err.println(iServiceProducto.findAllProductoService());
 		return iServiceProducto.findAllProductoService();
 	}
-	@RequestMapping(value = "/all/{nombreProducto}",method = RequestMethod.GET)
+	@RequestMapping(value = "/one/{nombreProducto}",method = RequestMethod.GET)
 	@Override
 	public List<Producto> getOneProductoController(@PathVariable("nombreProducto")String nombreProducto) 
 	{
-		System.err.println("---------------------------------------------------------------------------" +nombreProducto.getClass() +" ");
+		//System.err.println("---------------------------------------------------------------------------" +nombreProducto +" ");
 		
-		if( nombreProducto.equals("") )
-		{
-
-			System.err.println(nombreProducto + " Entro primer if ");
-			return iServiceProducto.findAllProductoService();
-			
-		}
-			System.err.println(nombreProducto + " Segundo of ");
+	
 			return iServiceProducto.findByNombreOrCodigo(nombreProducto, nombreProducto);
-			
+
+	
 			
 	}
 
