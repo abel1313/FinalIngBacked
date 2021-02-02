@@ -1,24 +1,19 @@
 package com.ferreteria.config;
 
-import org.springframework.context.annotation.Configuration;
-
-
-@Configuration
-
+//@EnableJdbcHttpSession
 public class HttpSessionConfig 
 {
 /*
-	@Bean    
-	public LettuceConnectionFactory connectionFactory() 
-	{       
-		return new LettuceConnectionFactory();    
-	}
-	@Bean    
-	public HttpSessionIdResolver httpSessionIdResolver() 
-	{
-		return HeaderHttpSessionIdResolver.xAuthToken();
+ 	@Bean
+	public EmbeddedDatabase dataSource() {
+		return new EmbeddedDatabaseBuilder() 
+				.setType(EmbeddedDatabaseType.H2).addScript("org/springframework/session/jdbc/schema-h2.sql").build();
 	}
 
- */
+	@Bean
+	public PlatformTransactionManager transactionManager(DataSource dataSource) {
+		return new DataSourceTransactionManager(dataSource); 
+	}
+ * */
 
 }
